@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "nx run-many --target=build",
+    "build": "nx run-many --target=build --exclude=@vitest/example-test",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
@@ -23,7 +23,9 @@
   "stackblitz": {
     "startCommand": "npm run test:ui"
   },
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "nx": {
     "targets": {
       "test": {
@@ -33,14 +35,18 @@
           "{workspaceRoot}/vitest.workspace.ts",
           "{workspaceRoot}/vitest.shared.ts"
         ],
-        "dependsOn": ["build"]
+        "dependsOn": [
+          "build"
+        ]
       },
       "test:coverage": {
         "inputs": [
           "{workspaceRoot}/vitest.workspace.ts",
           "{workspaceRoot}/vitest.shared.ts"
         ],
-        "dependsOn": ["build"]
+        "dependsOn": [
+          "build"
+        ]
       }
     }
   }

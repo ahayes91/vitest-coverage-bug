@@ -1,5 +1,7 @@
-# Vitest Demo
+To run locally:
 
-Run `npm test` and change a test or source code to see HMR in action!
+`npm install`
 
-Learn more at https://vitest.dev
+`npm run test:coverage`
+
+See `coverage` folder has no `lcov.info` file.

@@ -1,0 +1,47 @@
+{
+  "name": "@vitest/example-test",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "nx run-many --target=build",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "nx exec -- vitest --run --coverage"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "latest",
+    "@vitest/ui": "latest",
+    "happy-dom": "12.10.3",
+    "nx": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "stackblitz": {
+    "startCommand": "npm run test:ui"
+  },
+  "workspaces": ["packages/*"],
+  "nx": {
+    "targets": {
+      "test": {
+        "inputs": [
+          "default",
+          "^production",
+          "{workspaceRoot}/vitest.workspace.ts",
+          "{workspaceRoot}/vitest.shared.ts"
+        ],
+        "dependsOn": ["build"]
+      },
+      "test:coverage": {
+        "inputs": [
+          "{workspaceRoot}/vitest.workspace.ts",
+          "{workspaceRoot}/vitest.shared.ts"
+        ],
+        "dependsOn": ["build"]
+      }
+    }
+  }
+}

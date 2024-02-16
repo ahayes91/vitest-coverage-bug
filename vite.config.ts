@@ -1,7 +1,9 @@
 /// <reference types="vitest" />
 
-// Configure Vitest (https://vitest.dev/config/)
+import baseTestConfig from './vitest.shared';
 
 import { defineConfig } from 'vite';
 
-export default defineConfig({});
+export default defineConfig({
+    ...baseTestConfig,
+});

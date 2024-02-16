@@ -9,7 +9,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
-    "test:coverage": "nx exec -- vitest --run --coverage"
+    "test:coverage": "nx exec -- vitest --run --coverage",
+    "test:report": "nx test:coverage; open ./coverage/index.html"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "latest",

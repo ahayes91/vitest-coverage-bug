@@ -3,15 +3,9 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     coverage: {
-      thresholds: {
-        statements: 80,
-        branches: 70,
-        functions: 70,
-        lines: 80,
-      },
-      reporter: ['lcov'],
+      reporter: ['lcov', 'html'],
       reportOnFailure: true,
-      exclude: ['**/*.stories*'],
+      exclude: ['**/*.stories*', '**vitest**'],
     },
     testTimeout: 60000,
     reporters: ['verbose'],

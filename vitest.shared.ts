@@ -12,13 +12,8 @@ export default defineConfig({
     testTimeout: 60000,
     reporters: ['verbose'],
     passWithNoTests: true,
-    deps: {
-      moduleDirectories: ['node_modules', path.resolve('../../packages')],
+    alias: {
+      "is-even": path.resolve('./packages/is-even/index')
     },
-    server: {
-      deps: {
-        external: ['is-even'],
-      }
-    }
   },
 });
